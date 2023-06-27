@@ -1,6 +1,6 @@
 // packages needed for this application
 const inquirer = require('inquirer');
-//const generateMarkdown = require('./utils/generateMarkdown.js'); 
+//const generateSVG = require('./utils/generateSVG.js'); 
 const fs = require('fs');
 
 // array of questions that gather content for generated README file
