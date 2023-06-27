@@ -1,0 +1,23 @@
+{
+  "name": "fictional-bassoon",
+  "version": "1.0.0",
+  "description": "Module 10 Object-oriented Programming Challenge: SVG Logo Maker",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mahlheim/fictional-bassoon.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mahlheim/fictional-bassoon/issues"
+  },
+  "homepage": "https://github.com/mahlheim/fictional-bassoon#readme",
+  "dependencies": {
+    "inquirer": "^8.2.4"
+  }
+}
