@@ -1,6 +1,6 @@
 // packages needed for this application
 const inquirer = require('inquirer');
-//const generateSVG = require('./utils/generateSVG.js'); 
+const shapes = require('./lib/shapes.js'); 
 const fs = require('fs');
 
 // array of questions that gather content for generated README file
@@ -40,7 +40,7 @@ function writeToFile(response) {
 // function that initializes app
 function init() {
     inquirer.prompt(questions)
-    .then (response => writeToFile(generateMarkdown(response)));
+    .then (response => writeToFile(shapes(response)));
 }
 
 // calls function that initializes app
