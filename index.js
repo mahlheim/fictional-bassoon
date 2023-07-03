@@ -1,8 +1,24 @@
 // packages needed for this application
 const inquirer = require('inquirer');
-const shapes = require('./lib/shapes.js'); 
+const {Circle, Triangle, Square} = require('./lib/shapes.js'); 
 const fs = require('fs');
 
+// svg class, constructor includes methods for rendering text and shape elements
+class SVG {
+    constructor() {
+        this.textElement = ''
+        this.shapeElement = ''
+    } 
+    render() {
+        return  `<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="300" height="200">${this.shapeElement}${this.textElement}</svg>`
+    }
+    setTextElement(text, color) {
+        this.textElement = `<text x = '150' y = '125' font-size = '60' text-anchor = 'middle' fill = '${color}'>${text}</text>`
+    }
+    setShapeElement(shape) {
+        this.shapeElement = shape.render();
+    }
+}
 // array of questions that gather content for generated README file
 const questions = [
     {
@@ -29,18 +45,62 @@ const questions = [
 ];
 
 // function that writes README file
-function writeToFile(response) {
-    const fileName = 'logo.svg';
-
-    fs.writeFile(fileName, response, function (err) {
-        err ? console.error(err) : console.log('Generated logo.svg!')
+function writeToFile(fileName, data) {
+    fs.writeFile(fileName, data, function (err) {
+        err ? console.error(err) : console.log('Generated logo.svg!');
     });
 }
  
 // function that initializes app
-function init() {
-    inquirer.prompt(questions)
-    .then (response => writeToFile(shapes(response)));
+async function init() {
+    const svgFile = 'logo.svg';
+    let svgString = '';
+
+    // calls questions
+    const choices = await inquirer.prompt(questions);
+
+    // handles text
+    let logoText = '';
+    if(choices.text.length > 0 && choices.text.length < 4) {
+        logoText = choices.text;
+    } else {
+        console.log('Invalid response. Please ensure your text is three letters long!');
+        return;
+    }
+
+    // handles text color
+    logoFontColor = choices.textColor;
+
+    // handles shape type
+    logoShapeType = choices.shape;
+
+    // handles shape color
+    logoShapeColor = choices.shapeColor;
+
+    // handles shape
+    let logoShape;
+    if(logoShapeType === 'Circle'|| logoShapeType === 'circle') {
+        logoShape = new Circle();
+    } else if(logoShapeType === 'Triangle' || logoShapeType === 'triangle') {
+        logoShape = new Triangle();
+    } else if(logoShapeType === 'Square' || logoShapeType === 'square') {
+        logoShape = new Square();
+    } else {
+        console.log('Invalid shape!');
+    }
+
+    // applies shape color
+    logoShape.setColor(logoShapeColor);
+
+    // create the new svg shape and applies the above elements to it
+    const svg = new SVG();
+    svg.setTextElement(logoText, logoFontColor);
+    svg.setShapeElement(logoShape);
+    svgString = svg.render();
+
+    // prints shape to log and calls writeToFile function
+    console.log('Your logo: ' + svgString);
+    writeToFile(svgFile, svgString);
 }
 
 // calls function that initializes app
