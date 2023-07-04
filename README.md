@@ -36,6 +36,9 @@ https://www.w3schools.com/js/js_async.asp#:~:text=async%20makes%20a%20function%2
 
 https://www.appsloveworld.com/discordjs/100/8/setcolor-is-not-a-function 
 
+This README was generated using:
+https://github.com/mahlheim/sturdy-spoon
+
 ## Contributions
 N/A
 
@@ -51,3 +54,4 @@ Tests for the shape classes, which utilize jest, are available in "shapes.test.j
 ## Questions
 Contact me on [GitHub](https://github.com/mahlheim)!
 Otherwise, email me at ahlheimmonique@gmail.com! Thanks!
+
