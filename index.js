@@ -19,7 +19,8 @@ class SVG {
         this.shapeElement = shape.render()
     }
 }
-// array of questions that gather content for generated README file
+
+// array of questions that gather content for generated svg file
 const questions = [
     {
         type: 'input',
@@ -51,7 +52,7 @@ function writeToFile(fileName, data) {
     });
 }
  
-// function that initializes app
+// async function that initializes app
 async function init() {
     const svgFile = 'logo.svg';
     let svgString = '';
@@ -97,7 +98,6 @@ async function init() {
     console.log('Your text color: ' + logoFontColor);
     console.log('Your logo shape: ' + logoShapeType);
     console.log('Your logo color: ' + logoShapeColor);
-    console.log(logoShape);
 
     // creates the new svg shape and applies the above elements to it
     let svg = new SVG();
@@ -106,9 +106,8 @@ async function init() {
     svgString = svg.render();
 
     // prints shape to log and calls writeToFile function
-    console.log('Your logo: ' + svgString);
+    console.log('Your logo code: ' + svgString);
     writeToFile(svgFile, svgString);
-    console.log('Check out your new logo in the "logo.svg" file!');
 }
 
 // calls function that initializes app

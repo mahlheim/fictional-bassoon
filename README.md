@@ -11,12 +11,15 @@
 - [Questions](#Questions)
 
 ## Description
-This application offers a way to generate a simple logo for projects. Inquirer is utilized to ask the user questions about the desired design of the logo. Once completed, a file called "logo.svg" will be created containing the new logo.
+This application offers a way to generate a simple logo for projects. Inquirer is utilized to ask the user questions about the desired design of the logo. Once completed, a file called "logo.svg" will be created containing the new logo. Examples can be found in the example folder in the repo.
 
 ## Installation
-Clone the repo and open with a code editor. Then open a terminal on the index.js file and run "node index.js" in the CL. Answer the questions as they appear. Then you will recieve a success message that reads "Check out your new logo in the "logo.svg" file!".
+Clone the repo. Ensure node.js is installed, then open the repo in a code editor. Open a terminal to the repo and then install the required dependencies: inquirer and jest. 
 
 ## Usage
+Run "node index.js" in the CL. Answer the four questions as they appear. Then, several console logs will print that list the user's input as well as the code that is created that render the logo. Finally, a success message will read "Generated logo.svg!". 
+
+![screengrab](/screengrabs/app_screengrab.png)
 
 ## Credits
 Below are the references I used while buidling this application:
@@ -39,7 +42,9 @@ MIT license.
 Please refer to https://opensource.org/license/mit/ for more details.
 
 ## Tests
+Tests for the shape classes, which utilize jest, are available in "shapes.test.js". They can be seen in action in the demo video linked above as well as the screengrab below.
 
+![screengrab](/screengrabs/test_screengrab.png)
 
 ## Questions
 Contact me on [GitHub](https://github.com/mahlheim)!
