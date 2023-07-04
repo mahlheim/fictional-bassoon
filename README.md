@@ -17,12 +17,12 @@ This application offers a way to generate a simple logo for projects. Inquirer i
 Clone the repo. Ensure node.js is installed, then open the repo in a code editor. Open a terminal to the repo and then install the required dependencies: inquirer and jest. 
 
 ## Usage
-Run "node index.js" in the CL. Answer the four questions as they appear. Then, several console logs will print that list the user's input as well as the code that is created that render the logo. Finally, a success message will read "Generated logo.svg!". 
+Run "node index.js" in the CL. Answer the four questions as they appear. Then, several console logs will print that list the user's input as well as the code that is created that renders the logo. Finally, a success message will read "Generated logo.svg!". 
 
 ![screengrab](/screengrabs/app_screengrab.png)
 
 ## Credits
-Below are the references I used while buidling this application:
+Below are the references I used while building this application:
 
 https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Basic_Shapes
 
