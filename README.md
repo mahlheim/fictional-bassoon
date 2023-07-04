@@ -19,6 +19,8 @@ Clone the repo. Ensure node.js is installed, then open the repo in a code editor
 ## Usage
 Run "node index.js" in the CL. Answer the four questions as they appear. Then, several console logs will print that list the user's input as well as the code that is created that renders the logo. Finally, a success message will read "Generated logo.svg!". 
 
+View a demo video [here](https://drive.google.com/file/d/1BLXPhrwMg942sgyxoUFI7m-jtMOlfmNF/view)!
+
 ![screengrab](/screengrabs/app_screengrab.png)
 
 ## Credits
