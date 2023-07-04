@@ -10,13 +10,13 @@ class SVG {
         this.shapeElement = ''
     } 
     render() {
-        return  `<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="300" height="200">${this.shapeElement}${this.textElement}</svg>`
+        return `<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="300" height="200">${this.shapeElement}${this.textElement}</svg>`
     }
     setTextElement(text, color) {
         this.textElement = `<text x = '150' y = '125' font-size = '60' text-anchor = 'middle' fill = '${color}'>${text}</text>`
     }
     setShapeElement(shape) {
-        this.shapeElement = shape.render();
+        this.shapeElement = shape.render()
     }
 }
 // array of questions that gather content for generated README file
@@ -69,13 +69,13 @@ async function init() {
     }
 
     // handles text color
-    logoFontColor = choices.textColor;
+    let logoFontColor = choices['textColor'];
 
     // handles shape type
-    logoShapeType = choices.shape;
+     let logoShapeType = choices.shape;
 
     // handles shape color
-    logoShapeColor = choices.shapeColor;
+    let logoShapeColor = choices['shapeColor'];
 
     // handles shape
     let logoShape;
@@ -89,11 +89,18 @@ async function init() {
         console.log('Invalid shape!');
     }
 
-    // applies shape color
-    logoShape.setColor(logoShapeColor);
+    // applies logo color
+    logoShape.colorChoice(logoShapeColor);
 
-    // create the new svg shape and applies the above elements to it
-    const svg = new SVG();
+    // console logs to check user inputs
+    console.log('Your text: ' + logoText);
+    console.log('Your text color: ' + logoFontColor);
+    console.log('Your logo shape: ' + logoShapeType);
+    console.log('Your logo color: ' + logoShapeColor);
+    console.log(logoShape);
+
+    // creates the new svg shape and applies the above elements to it
+    let svg = new SVG();
     svg.setTextElement(logoText, logoFontColor);
     svg.setShapeElement(logoShape);
     svgString = svg.render();
