@@ -108,6 +108,7 @@ async function init() {
     // prints shape to log and calls writeToFile function
     console.log('Your logo: ' + svgString);
     writeToFile(svgFile, svgString);
+    console.log('Check out your new logo in the "logo.svg" file!');
 }
 
 // calls function that initializes app
