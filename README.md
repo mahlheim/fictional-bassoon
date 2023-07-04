@@ -1,7 +1,7 @@
 # Module 10 Object-Oriented Programming Challenge: SVG Logo Maker
 ![Static Badge](https://img.shields.io/badge/license-MIT-pink)
 
-- Table of Contents
+## Table of Contents
 - [Description](#Description)
 - [Installation](#Installation)
 - [Usage](#Usage)
